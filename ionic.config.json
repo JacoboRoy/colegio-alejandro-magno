@@ -1,0 +1,8 @@
+{
+  "name": "Colegio Alejandro Magno",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "3ddf2afc"
+}

@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Colegio Alejandro Magno",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
