@@ -21,10 +21,10 @@
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="false" />
+    <preference name="fullscreen" value="true" />
     <preference name="stay-in-webview" value="false" />
     <preference name="webviewbounce" value="false" />
-    <preference name="UIWebViewBounce" value="false" />
+    <preference name="UIWebViewBounce" value="true" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="prerendered-icon" value="true" />
     <preference name="AppendUserAgent" value="MoodleMobile" />
@@ -143,7 +143,7 @@
             <provider android:authorities="${applicationId}.localnotifications.provider" android:exported="false" android:grantUriPermissions="true" android:name="de.appplant.cordova.plugin.notification.util.AssetProvider">
                 <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/localnotification_provider_paths" />
             </provider>
-            <receiver android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.TriggerReceiver" />
+            <receiver android:exported="true" android:name="de.appplant.cordova.plugin.localnotification.TriggerReceiver" />
             <receiver android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.ClearReceiver" />
             <service android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.ClickReceiver" />
             <receiver android:directBootAware="true" android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.RestoreReceiver">
