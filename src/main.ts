@@ -1,32 +1,30 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router';
+// (C) Copyright 2015 Moodle Pty Ltd.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-import { IonicVue } from '@ionic/vue';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-/* Core CSS required for Ionic components to work properly */
-import '@ionic/vue/css/core.css';
+import { AppModule } from './app/app.module';
+import { CoreConstants } from './core/constants';
 
-/* Basic CSS for apps built with Ionic */
-import '@ionic/vue/css/normalize.css';
-import '@ionic/vue/css/structure.css';
-import '@ionic/vue/css/typography.css';
+if (CoreConstants.BUILD.isProduction) {
+    enableProdMode();
+}
 
-/* Optional CSS utils that can be commented out */
-import '@ionic/vue/css/padding.css';
-import '@ionic/vue/css/float-elements.css';
-import '@ionic/vue/css/text-alignment.css';
-import '@ionic/vue/css/text-transformation.css';
-import '@ionic/vue/css/flex-utils.css';
-import '@ionic/vue/css/display.css';
-
-/* Theme variables */
-import './theme/variables.css';
-
-const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
-  
-router.isReady().then(() => {
-  app.mount('#app');
-});
+platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch(err => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+    });

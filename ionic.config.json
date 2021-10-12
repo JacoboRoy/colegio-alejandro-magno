@@ -1,8 +1,11 @@
 {
   "name": "Colegio Alejandro Magno",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   },
-  "type": "vue",
-  "id": "3ddf2afc"
+  "type": "angular",
+  "hooks": {
+    "build:before": "./scripts/copy-assets.js",
+    "serve:before": "./scripts/copy-assets.js"
+  }
 }
